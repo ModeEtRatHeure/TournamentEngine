@@ -9,12 +9,12 @@ public class Match {
     protected List<Player> players;
     protected int numberOfWinner;
 
-    public Match(Player... players){
-        this.players = new ArrayList<>(List.of(players));
+    public Match(List<Player> players){
+        this.players = new ArrayList<>(players);
         numberOfWinner = 1;
     }
 
-    public Match(int numberOfWinner, Player... players){
+    public Match(int numberOfWinner, List<Player> players){
         this(players);
         this.numberOfWinner = numberOfWinner;
     }
