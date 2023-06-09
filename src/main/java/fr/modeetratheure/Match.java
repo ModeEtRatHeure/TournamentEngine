@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * A class to represent a match between two or more players.
+ */
 public class Match {
 
     protected List<Player> players;
@@ -19,6 +22,10 @@ public class Match {
         this.numberOfWinner = numberOfWinner;
     }
 
+    /**
+     * @return a list of players with a number of winners determined by the value passed to the method {@link #setNumberOfWinner(int)}
+     * or to the constructor {@link #Match(int, List)}
+     */
     public List<Player> getWinners(){
         players.sort(Comparator.reverseOrder());
         return players.subList(0, numberOfWinner - 1);
