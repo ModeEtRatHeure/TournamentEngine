@@ -1,7 +1,5 @@
 package fr.modeetratheure;
 
-import fr.modeetratheure.exceptions.InvalidValueException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +13,10 @@ public abstract class TournamentTree {
      * @param depth represents the first phase of the tree. A depth of two means the first phase is semi-final, a depth
      *             of three means the first phase is quarter-final, etc... (the depth needs to be higher than 1)
      */
-    public void generateTree(int depth){
+    public TournamentTree(int depth){
         tree = new ArrayList<>();
         if(depth < 2){
-            throw new InvalidValueException("Depth of the tree needs to be higher than 1.");
+            throw new IllegalArgumentException("Depth of the tree needs to be higher than 1.");
         }
         for(int i = depth - 1; i >= 0; i--){
             tree.add(new Match[2^i]);
